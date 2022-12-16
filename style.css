@@ -1,0 +1,598 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #333;
+    animation: 3s linear forwards;
+    animation-name: none;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #333;
+}
+
+.menu {
+    width: 200px;
+    height: 375px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 75px;
+    /* display: none; */
+}
+
+.languajeButton {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    font-weight: 900;
+    border: none;
+    outline: none;
+    background-color: #a33;
+    border-radius: 4px;
+    transition: all .5s;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.languajeButton:hover {
+    background-color: #911;
+}
+
+.menu .title {
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 275px));
+    -webkit-perspective: 800px;
+    perspective: 800px;
+    text-align: center;
+    font-size: 80px;
+    letter-spacing: 15px;
+    pointer-events: none;
+}
+
+.menu .title span {
+    display: inline-block;
+    text-shadow: 1px 1px #000;
+    animation: titleAnimate 3s linear infinite;
+    transform-origin: 0 80%;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+.menu .title span:nth-child(odd) {
+    color: #555
+}
+
+Facil .menu .title span:nth-child(even) {
+    color: #aaa
+}
+
+.menu .title span:nth-child(2) {
+    animation-delay: .3s;
+}
+
+.menu .title span:nth-child(3) {
+    animation-delay: .6s;
+}
+
+.menu .title span:nth-child(4) {
+    animation-delay: .9s;
+}
+
+.menu .title span:nth-child(5) {
+    animation-delay: 1.2s;
+}
+
+.menu .title span:nth-child(6) {
+    animation-delay: 1.8s;
+}
+
+.menu .title span:nth-child(7) {
+    animation-delay: 2.1s;
+}
+
+.menu .title span:nth-child(8) {
+    animation-delay: 2.4s;
+}
+
+.menu button {
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    -webkit-box-reflect: below .5px linear-gradient(transparent, #3334);
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.menu button::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, #fb0094aa, #00fa, #0f0a, #ff0a, #f00a, #fb0094aa, #00fa, #0f0a, #ff0a, #f00a);
+    background-size: 400%;
+    opacity: 0;
+    transition: .5s;
+    animation: buttonAnimate 20s linear infinite;
+}
+
+.menu button::after {
+    content: '';
+    width: 125%;
+    height: 125%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(45deg, #fb0094aa, #00fa, #0f0a, #ff0a, #f00a, #fb0094aa, #00fa, #0f0a, #ff0a, #f00a);
+    background-size: 400%;
+    opacity: 0;
+    filter: blur(20px);
+    transition: .5s;
+    animation: buttonAnimate 20s linear infinite;
+}
+
+.menu button:hover::before,
+.menu button:hover::after {
+    opacity: 1;
+}
+
+.menu button span {
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 20px;
+    letter-spacing: 4px;
+    font-family: 'consolas';
+    font-weight: 900;
+    background-color: #3c3c3c;
+    color: #ffffff33;
+    transition: .5s;
+    z-index: 1;
+}
+
+.menu button:hover span {
+    color: #fff;
+}
+
+.menu button span::before {
+    content: '';
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffffff1a;
+}
+
+.loading {
+    display: none;
+}
+
+.loadingText {
+    position: absolute;
+    top: calc(25%);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'consolas';
+    font-size: 40px;
+    letter-spacing: 5px;
+    color: #333;
+}
+
+.loadingText span {
+    animation: loadigTextAnimate 4s linear infinite;
+}
+
+.loadingText span:nth-child(2) {
+    animation-delay: .1s;
+}
+
+.loadingText span:nth-child(3) {
+    animation-delay: .2s;
+}
+
+.loadingText span:nth-child(4) {
+    animation-delay: .3s;
+}
+
+.loadingText span:nth-child(5) {
+    animation-delay: .4s;
+}
+
+.loadingText span:nth-child(6) {
+    animation-delay: .5s;
+}
+
+.loadingText span:nth-child(7) {
+    animation-delay: .6s;
+}
+
+.loadingText span:nth-child(8) {
+    animation-delay: .7s;
+}
+
+.loadingText span:nth-child(9) {
+    animation-delay: .8s;
+}
+
+.loadingText span:nth-child(10) {
+    animation-delay: .9s;
+}
+
+.loadingText span:nth-child(11) {
+    animation-delay: 1s;
+}
+
+
+.loader {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    animation: loaderAnimate 1s linear infinite;
+}
+
+.loader .cube {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    animation: loaderCubeAnimate 1s linear infinite;
+}
+
+.loader .cube:nth-child(1) {
+    top: 0;
+    left: 0;
+    background-color: #f79f1f;
+}
+
+.loader .cube:nth-child(2) {
+    top: 0;
+    right: 0;
+    background-color: #12cbc4;
+}
+
+.loader .cube:nth-child(3) {
+    bottom: 0;
+    left: 0;
+    background-color: #ed4c67;
+}
+
+.loader .cube:nth-child(4) {
+    bottom: 0;
+    right: 0;
+    background-color: #a3cb38;
+}
+
+.esc,
+.win {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000a;
+    z-index: 100;
+}
+
+.esc .buttonsContainer,
+.win .buttonsContainer {
+    width: 500px;
+    height: 300px;
+    gap: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #711a;
+    border-radius: 20px;
+    border: 5px solid #300a;
+    animation: 1s ease-in-out forwards;
+    animation-name: none;
+}
+
+.esc .buttonsContainer .text,
+.win .buttonsContainer .text {
+    width: 100%;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.esc .buttonsContainer button,
+.win .buttonsContainer button {
+    width: 120px;
+    height: 45px;
+    position: absolute;
+    top: 60%;
+    transform: translate(50%, -50%);
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 900;
+    font-size: 20px;
+    background: #711;
+    border: 2px solid #000;
+    cursor: pointer;
+}
+
+.esc .buttonsContainer button:nth-child(1) {
+    left: 25%;
+}
+
+.esc .buttonsContainer button:nth-child(2) {
+    right: 25%;
+}
+
+.win .buttonsContainer button {
+    width: 200px;
+}
+
+.win .buttonsContainer button:nth-child(3) {
+    left: 25%;
+    transform: translate(-50%, -50%);
+}
+
+.win .buttonsContainer button:nth-child(2) {
+    right: 25%;
+}
+
+.esc .buttonsContainer button::before,
+.win .buttonsContainer button::before {
+    content: '';
+    width: calc(100% + 4px);
+    height: calc(100% - 10px);
+    position: absolute;
+    top: 5px;
+    left: -2px;
+    background-color: #711;
+    transform: scaleY(1);
+    transition: .5s ease-in-out;
+    transition-delay: .5s;
+}
+
+.esc .buttonsContainer button:hover::before,
+.win .buttonsContainer button:hover::before {
+    transform: scaleY(0);
+}
+
+.esc .buttonsContainer button::after,
+.win .buttonsContainer button::after {
+    content: '';
+    width: calc(100% - 10px);
+    height: calc(100% + 4px);
+    position: absolute;
+    top: -2px;
+    left: 5px;
+    background-color: #711;
+    transform: scaleX(1);
+    transition: .5s ease-in-out;
+}
+
+.esc .buttonsContainer button:hover::after,
+.win .buttonsContainer button:hover::after {
+    transform: scaleX(0);
+}
+
+.esc .buttonsContainer button span,
+.win .buttonsContainer button span {
+    position: relative;
+    z-index: 100;
+}
+
+.gameContainer {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card {
+    position: absolute;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.card .content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+    transition: 1.5s;
+}
+
+.card.turn .content {
+    transform: rotateY(.5turn);
+}
+
+.card .content .front,
+.card .content .back {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 20px;
+    backface-visibility: hidden;
+}
+
+.card .content .front {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: rotateY(.5turn);
+}
+
+.card .content .back {
+    background-color: #3c3c3c;
+}
+
+.card .content .back .text {
+    color: #3c3c3c;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px #000;
+    font-weight: 900;
+    transform: rotate(-45deg);
+    pointer-events: none;
+}
+
+@keyframes buttonAnimate {
+
+    from,
+    to {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 300% 0;
+    }
+}
+
+@keyframes loaderAnimate {
+
+    from,
+    10%,
+    90%,
+    to {
+        width: 100px;
+        height: 100px;
+    }
+
+    50% {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@keyframes loaderCubeAnimate {
+
+    from,
+    10% {
+        transform: rotate(0);
+    }
+
+    60%,
+    90%,
+    to {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes faceDown {
+    from {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -100%);
+    }
+
+    to {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes faceUp {
+    from {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    to {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -100%);
+    }
+}
+
+@keyframes darken {
+    from {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes titleAnimate {
+    35% {
+        transform: rotateX(360deg);
+    }
+
+    to {
+        transform: rotateX(360deg);
+    }
+}
+
+@keyframes loadigTextAnimate {
+
+    from,
+    to {
+        color: #000;
+        filter: blur(1px);
+        text-shadow:
+            0 0 10px #999,
+            0 0 20px #999,
+            0 0 40px #999,
+            0 0 80px #999,
+            0 0 120px #999,
+            0 0 200px #999,
+            0 0 300px #999,
+            0 0 400px #999;
+    }
+
+    25%,
+    75% {
+        color: #333;
+        filter: blur(0);
+        text-shadow: none;
+    }
+}

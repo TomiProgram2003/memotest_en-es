@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+
+<head>
+    <!-- Title -->
+    <title>MemoTest</title>
+    <!-- Meta -->
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <!-- CSS -->
+    <link rel='stylesheet' href='./style.css'>
+    <!-- JS -->
+    <script src='./languaje.js' defer></script>
+    <script src='./algorithm.js'></script>
+    <script src='./card.js'></script>
+    <script src='./cardsData.js'></script>
+    <script src='./game.js'></script>
+    <script src='./main.js' defer></script>
+    <!-- Axios -->
+    <script src='https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js'></script>
+</head>
+
+
+<body>
+    
+    <main class='main'>
+        <button class='languajeButton' txtID='10'>ES</button>
+
+
+        <section class='menu'>
+            <h1 class='title'>
+                <span>M</span>
+                <span>E</span>
+                <span>M</span>
+                <span>O</span>
+                <span>T</span>
+                <span>E</span>
+                <span>S</span>
+                <span>T</span>
+            </h1>
+
+            <button class='difficulty' difficulty='4x4'><span  txtID='0'>Facil 4X4</span></button>
+            <button class='difficulty' difficulty='6x6'><span  txtID='1'>Mediano 6X6</span></button>
+            <button class='difficulty' difficulty='8x8'><span  txtID='2'>Difícil 8X8</span></button>
+        </section>
+
+
+        <section class='loading'>
+            <p class='loadingText' txtID='9' HTMLCode='span' split>
+                <span>C</span>
+                <span>A</span>
+                <span>R</span>
+                <span>G</span>
+                <span>A</span>
+                <span>N</span>
+                <span>D</span>
+                <span>O</span>
+                <span>.</span>
+                <span>.</span>
+                <span>.</span>
+            </p>
+            <div class='loader'>
+                <span class='cube'></span>
+                <span class='cube'></span>
+                <span class='cube'></span>
+                <span class='cube'></span>
+            </div>
+        </section>
+
+
+        <section class='esc'>
+            <div class='buttonsContainer'>
+                <span class='text' txtID='3'>¿Desea salir del juego?</span>
+                <button class='yes'><span txtID='4'>Si</span></button>
+                <button class='no'><span txtID='5'>No</span></button>
+            </div>
+        </section>
+
+
+        <section class='win'>
+            <div class='buttonsContainer'>
+                <span class='text' txtID='6'>HAS GANADO EL JUEGO!!!</span>
+                <button class='return'><span txtID='7'>Volver al menú</span></button>
+                <button class='restart'><span txtID='8'>Reiniciar</span></button>
+            </div>
+        </section>
+        
+
+        <section class='gameContainer'></section>
+    </main>
+    
+</body>
+
+
+</html>
